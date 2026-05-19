@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Login | Mobilube - Mobile Oil Change</title>
+          <link rel="icon" type="image/jpeg" href="images\favicon.webp">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { 
+                extend: { 
+                    fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        'ink-black': '#0a0a0a',
+                        'charcoal': '#1a1a1a',
+                        'dark-charcoal': '#121212',
+                        'ruby-mist': '#B83B3B',      
+                        'crimson-dark': '#9B2E2E',   
+                        'rose-dust': '#C85E5E',      
+                        'warm-stone': '#4A2E2E',     
+                        'cream-petal': '#FEF8F0',    
+                    }
+                } 
+            } 
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
+
+        /* RTL SUPPORT */
+        html[dir="rtl"] .rtl-flip { transform: scaleX(-1); }
+        html[dir="rtl"] .text-left { text-align: right !important; }
+        html[dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+        html[dir="rtl"] .pl-11 { padding-left: 1rem; padding-right: 2.75rem; }
+        html[dir="rtl"] .left-0 { left: auto; right: 0; }
+        html[dir="rtl"] .pl-4 { padding-left: 0; padding-right: 1rem; }
+        
+        /* DARK MODE - Exactly preserved */
+        html.dark body { background-color: #0a0a0a !important; }
+        html.dark .text-warm-stone, html.dark h1, html.dark h2, html.dark p, html.dark label { color: #FEF8F0 !important; }
+        html.dark .text-ruby-mist { color: #E07A7A !important; }
+        html.dark .bg-white { background-color: #121212 !important; border-color: #2a2a2a !important; }
+        html.dark .input-field { background-color: #1a1a1a !important; border-color: #3a3a3a !important; color: #FEF8F0 !important; }
+        html.dark .input-field::placeholder { color: #888888 !important; }
+        html.dark .btn-primary-dark { background-color: #2a2a2a !important; color: #E07A7A !important; border: 1px solid #4a2e2e; }
+        html.dark .btn-primary-dark:hover { background-color: #3a2a2a !important; }
+
+        /* Floating animation for logo */
+        .floating-leaf { animation: floatLeaf 6s ease-in-out infinite; }
+        @keyframes floatLeaf {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(4deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+    </style>
+</head>
+<body class="bg-[#FEF8F0] font-sans antialiased min-h-screen flex items-center justify-center p-4 md:p-8 relative">
+
+    <div class="absolute top-4 right-4 flex gap-3 z-50">
+        <button id="darkModeToggle" class="w-10 h-10 rounded-full bg-white dark:bg-[#1a1a1a] shadow border border-[#F0CFCF] dark:border-[#3a3a3a] flex items-center justify-center text-[#4A2E2E] dark:text-[#FEF8F0] hover:text-[#B83B3B] transition">
+            <i id="darkIcon" class="fas fa-moon"></i>
+        </button>
+        <button id="rtlToggle" class="w-10 h-10 rounded-full bg-white dark:bg-[#1a1a1a] shadow border border-[#F0CFCF] dark:border-[#3a3a3a] flex items-center justify-center text-[#4A2E2E] dark:text-[#FEF8F0] font-bold text-xs hover:text-[#B83B3B] transition">
+            <span id="rtlLabel">RTL</span>
+        </button>
+    </div>
+
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-xl border border-[#F0CFCF] p-8 sm:p-10 relative z-10">
+        
+          <a href="index.html" class="logo-area flex-shrink-0 flex items-center gap-2 group">
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-[#B83B3B] text-xl md:text-2xl font-bold tracking-tight nav-text">Mobilube</span>
+                    </div>
+                </a>
+
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-[#4A2E2E] mb-2 text-warm-stone">Welcome Back</h1>
+            <p class="text-[#6F4B3B] text-sm text-warm-stone opacity-80">Sign in to book your next mobile oil change and manage appointments.</p>
+        </div>
+
+        <form action="#" method="POST" class="space-y-5">
+            <div>
+                <label for="email" class="block text-sm font-medium text-[#4A2E2E] mb-1.5 text-warm-stone text-left">Email Address</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="far fa-envelope text-[#C85E5E]"></i>
+                    </div>
+                    <input type="email" id="email" class="input-field w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-sm transition-all" placeholder="Enter your email">
+                </div>
+            </div>
+
+          <div>
+    <label for="password" class="block text-sm font-medium text-[#4A2E2E] mb-1.5 text-warm-stone text-left">
+        Password
+    </label>
+
+    <div class="relative">
+
+        <!-- Lock Icon -->
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <i class="fas fa-lock text-[#C85E5E]"></i>
+        </div>
+
+        <!-- Password Input -->
+        <input 
+            type="password" 
+            id="password" 
+            class="input-field w-full pl-11 pr-12 py-3 rounded-xl bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-sm transition-all" 
+            placeholder="••••••••"
+        >
+
+        <!-- Eye Icon -->
+        <button 
+            type="button" 
+            id="togglePassword"
+            class="absolute inset-y-0 right-0 pr-4 flex items-center text-[#C85E5E] hover:text-[#B83B3B] transition"
+        >
+            <i id="eyeIcon" class="fas fa-eye"></i>
+        </button>
+
+    </div>
+</div>
+
+            <div class="flex items-center justify-between pt-1">
+                <div class="flex items-center">
+                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-[#B83B3B] focus:ring-[#B83B3B] border-[#F0CFCF] rounded cursor-pointer">
+                    <label for="remember-me" class="ml-2 block text-sm text-[#4A2E2E] text-warm-stone cursor-pointer select-none">
+                        Remember me
+                    </label>
+                </div>
+                <div class="text-sm">
+                    <a href="#" class="font-medium text-[#B83B3B] hover:text-[#9B2E2E] transition">Forgot password?</a>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full flex justify-center items-center gap-2 bg-[#B83B3B] text-white py-3.5 rounded-xl text-sm font-bold shadow-lg shadow-[#B83B3B]/20 hover:bg-[#9B2E2E] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 mt-4 btn-primary-dark">
+                Sign In <i class="fas fa-arrow-right rtl-flip text-xs"></i>
+            </button>
+        </form>
+
+        <p class="mt-8 text-center text-sm text-[#6F4B3B] text-warm-stone border-t border-[#F0CFCF] dark:border-[#2a2a2a] pt-6">
+            Need preventative maintenance? <br class="sm:hidden">
+            <a href="signup.html" class="font-bold text-[#B83B3B] hover:text-[#9B2E2E] transition">Create Account</a>
+        </p>
+    </div>
+
+    <script>
+        (function() {
+            const html = document.documentElement;
+            
+            // Dark Mode
+            const darkToggle = document.getElementById('darkModeToggle');
+            const darkIcon = document.getElementById('darkIcon');
+            
+            function updateDarkUI(isDark) {
+                if(darkIcon) darkIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            }
+            if(localStorage.getItem('mobilube_dark') === 'enabled') {
+                html.classList.add('dark');
+                updateDarkUI(true);
+            }
+            darkToggle.addEventListener('click', () => {
+                const isDark = html.classList.toggle('dark');
+                localStorage.setItem('mobilube_dark', isDark ? 'enabled' : 'disabled');
+                updateDarkUI(isDark);
+            });
+
+            // RTL Toggle
+            const rtlBtn = document.getElementById('rtlToggle');
+            const rtlLabel = document.getElementById('rtlLabel');
+            
+            function setDirection(dir) {
+                html.setAttribute('dir', dir);
+                localStorage.setItem('mobilube_dir', dir);
+                if(rtlLabel) rtlLabel.innerText = dir === 'rtl' ? 'LTR' : 'RTL';
+            }
+            
+            const savedDir = localStorage.getItem('mobilube_dir') || 'ltr';
+            setDirection(savedDir);
+            
+            rtlBtn.addEventListener('click', () => {
+                setDirection(html.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl');
+            });
+            // Password Toggle
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('password');
+const eyeIcon = document.getElementById('eyeIcon');
+
+togglePassword.addEventListener('click', () => {
+    const isPassword = passwordInput.type === 'password';
+
+    passwordInput.type = isPassword ? 'text' : 'password';
+
+    eyeIcon.className = isPassword
+        ? 'fas fa-eye-slash'
+        : 'fas fa-eye';
+});
+        })();
+    </script>
+</body>
+</html>
