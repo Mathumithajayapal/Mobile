@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Sign Up | Mobilube - Mobile Oil Change</title>
-          <link rel="icon" type="image/jpeg" href="images\favicon.webp">
+    <link rel="icon" type="image/jpeg" href="images\favicon.webp">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -36,14 +36,11 @@
         html[dir="rtl"] .rtl-flip { transform: scaleX(-1); }
         html[dir="rtl"] .text-left { text-align: right !important; }
         html[dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
-        html[dir="rtl"] .pl-11 { padding-left: 1rem; padding-right: 2.75rem; }
         html[dir="rtl"] .left-0 { left: auto; right: 0; }
-        html[dir="rtl"] .pl-4 { padding-left: 0; padding-right: 1rem; }
         html[dir="rtl"] .absolute.inset-y-0.left-0 { left: auto; right: 0; }
-        html[dir="rtl"] .pr-10 { padding-right: 2.5rem; padding-left: 1rem; }
         html[dir="rtl"] .eye-btn { right: auto; left: 12px; }
         
-        /* DARK MODE - Exactly preserved */
+        /* DARK MODE */
         html.dark body { background-color: #0a0a0a !important; }
         html.dark .text-warm-stone, html.dark h1, html.dark h2, html.dark p, html.dark label { color: #FEF8F0 !important; }
         html.dark .text-ruby-mist { color: #E07A7A !important; }
@@ -52,14 +49,6 @@
         html.dark .input-field::placeholder { color: #888888 !important; }
         html.dark .btn-primary-dark { background-color: #2a2a2a !important; color: #E07A7A !important; border: 1px solid #4a2e2e; }
         html.dark .btn-primary-dark:hover { background-color: #3a2a2a !important; }
-
-        /* Floating animation for logo */
-        .floating-leaf { animation: floatLeaf 6s ease-in-out infinite; }
-        @keyframes floatLeaf {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(4deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
 
         /* Eye button styling */
         .eye-btn {
@@ -71,246 +60,190 @@
             border: none;
             cursor: pointer;
             color: #C85E5E;
-            font-size: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transition: color 0.2s ease;
         }
-        .eye-btn:hover {
-            color: #B83B3B;
-        }
-        html.dark .eye-btn {
-            color: #E07A7A;
-        }
-        html.dark .eye-btn:hover {
-            color: #FEF8F0;
-        }
-        .input-wrapper {
-            position: relative;
-            width: 100%;
-        }
-        /* ensure proper padding for eye button */
-        .password-input {
-            padding-right: 42px !important;
-        }
+        .eye-btn:hover { color: #B83B3B; }
+        html.dark .eye-btn { color: #E07A7A; }
+        html.dark .eye-btn:hover { color: #FEF8F0; }
+        
+        .password-input { padding-right: 42px !important; }
         html[dir="rtl"] .password-input {
             padding-right: 1rem !important;
             padding-left: 42px !important;
         }
+
+        /* UNIVERSAL NO-SCROLL & CENTERED LAYOUT */
+        html, body {
+            overflow: hidden !important; /* Strictly prevents scrolling everywhere */
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            touch-action: none; /* Prevents mobile pull-to-refresh & swipe scrolls */
+        }
+
+        /* ULTRA COMPACT CARD - Enforced globally to prevent floating button overlap */
+        .signup-card {
+            width: 90%;
+            max-width: 380px !important;
+            padding: 1.25rem 1.5rem !important;
+            overflow: visible !important;
+            max-height: none !important;
+            height: auto !important;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* Aggressive form minimization for mobile & tablet */
+        .logo-area span.nav-text { font-size: 1.35rem !important; }
+        .signup-card h1 { font-size: 1.25rem !important; margin-bottom: 0.15rem !important; }
+        .signup-card .subhead { font-size: 0.65rem !important; margin-bottom: 0.75rem !important; }
         
-        /* DESKTOP: NO SCROLLING ANYWHERE - card fully visible without scroll */
-        @media (min-width: 1024px) {
-            body {
-                overflow: hidden;
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            /* Completely remove scroll from card */
-            .signup-card {
-                overflow: visible !important;
-                max-height: none !important;
-                height: auto !important;
-            }
+        .form-group-spacing { display: flex; flex-direction: column; gap: 0.6rem !important; margin-top: 0.25rem !important; }
+        .form-group-spacing > div { margin: 0 !important; }
+        
+        label { font-size: 0.65rem !important; margin-bottom: 0.2rem !important; }
+        .input-field { 
+            padding-top: 0.45rem !important; 
+            padding-bottom: 0.45rem !important; 
+            font-size: 0.75rem !important; 
         }
         
-        /* Mobile/tablet: natural scrolling allowed only on body */
-        @media (max-width: 1023px) {
-            body {
-                overflow-y: auto;
-                height: auto;
-                min-height: 100vh;
-            }
-            .signup-card {
-                margin: 1rem;
-            }
+        /* Icon positioning fixes for compact inputs */
+        .input-field.pl-9 { padding-left: 2rem !important; }
+        html[dir="rtl"] .input-field.pl-9 { padding-left: 0.75rem !important; padding-right: 2rem !important; }
+        .absolute.inset-y-0.left-0.pl-3 { padding-left: 0.75rem !important; }
+        html[dir="rtl"] .absolute.inset-y-0.left-0.pl-3 { padding-left: 0 !important; padding-right: 0.75rem !important; }
+        .absolute i { font-size: 0.7rem !important; }
+        .eye-btn i { font-size: 0.75rem !important; }
+
+        .signup-card button[type="submit"] { 
+            padding-top: 0.5rem !important; 
+            padding-bottom: 0.5rem !important; 
+            font-size: 0.75rem !important; 
+            margin-top: 0.35rem !important;
         }
+        .terms-label { font-size: 0.6rem !important; line-height: 1.2; }
         
-        /* Compact adjustments for card size reduction - make it fit perfectly without any scroll */
-        .compact-card {
-            padding: 1.5rem !important;
-        }
-        @media (min-width: 1024px) {
-            .compact-card {
-                padding: 1.5rem 2rem !important;
-            }
-            .logo-area i {
-                font-size: 1.75rem !important;
-            }
-            .logo-area span:first-child {
-                font-size: 1.35rem !important;
-            }
-            .logo-area .logo-subtext {
-                font-size: 0.55rem !important;
-            }
-            .signup-card h1 {
-                font-size: 1.5rem !important;
-                margin-bottom: 0.2rem !important;
-            }
-            .signup-card .subhead {
-                font-size: 0.7rem !important;
-                margin-bottom: 0.5rem !important;
-            }
-            .form-group-spacing {
-                gap: 0.6rem !important;
-            }
-            .input-field {
-                padding-top: 0.5rem !important;
-                padding-bottom: 0.5rem !important;
-                font-size: 0.8rem !important;
-            }
-            .signup-card button[type="submit"] {
-                padding-top: 0.6rem !important;
-                padding-bottom: 0.6rem !important;
-                font-size: 0.8rem !important;
-            }
-            .signup-card .terms-label {
-                font-size: 0.65rem !important;
-            }
-            .signup-card .footer-link {
-                margin-top: 0.75rem !important;
-                padding-top: 0.6rem !important;
-                font-size: 0.7rem !important;
-            }
-            label {
-                font-size: 0.7rem !important;
-                margin-bottom: 0.25rem !important;
-            }
-            .signup-card .space-y-3 {
-                margin-top: 0.5rem !important;
-            }
-            /* Extra compact spacing for all form elements */
-            .signup-card form > div {
-                margin-bottom: 0 !important;
-            }
-        }
-        
-        /* Ensure card height fits within viewport on desktop */
-        @media (min-width: 1024px) {
-            .signup-card {
-                max-width: 420px !important;
-                width: 100%;
-            }
-            .eye-btn {
-                font-size: 0.85rem;
-            }
-            .pl-9 {
-                padding-left: 2rem !important;
-            }
-            html[dir="rtl"] .pl-9 {
-                padding-left: 0.75rem !important;
-                padding-right: 2rem !important;
-            }
+        .footer-link { 
+            margin-top: 0.6rem !important; 
+            padding-top: 0.6rem !important; 
+            font-size: 0.65rem !important; 
         }
     </style>
 </head>
 <body class="bg-[#FEF8F0] font-sans antialiased">
 
-    <!-- Theme & RTL Toggle Buttons (floating) -->
-    <div class="fixed top-4 right-4 flex gap-3 z-50">
-        <button id="darkModeToggle" class="w-9 h-9 rounded-full bg-white dark:bg-[#1a1a1a] shadow border border-[#F0CFCF] dark:border-[#3a3a3a] flex items-center justify-center text-[#4A2E2E] dark:text-[#FEF8F0] hover:text-[#B83B3B] transition">
-            <i id="darkIcon" class="fas fa-moon text-sm"></i>
+    <!-- Theme & RTL Toggle Buttons (Slightly minimized to avoid collision) -->
+    <div class="fixed top-3 right-3 flex gap-2.5 z-50">
+        <button id="darkModeToggle" class="w-8 h-8 rounded-full bg-white dark:bg-[#1a1a1a] shadow border border-[#F0CFCF] dark:border-[#3a3a3a] flex items-center justify-center text-[#4A2E2E] dark:text-[#FEF8F0] hover:text-[#B83B3B] transition">
+            <i id="darkIcon" class="fas fa-moon text-[0.7rem]"></i>
         </button>
-        <button id="rtlToggle" class="w-9 h-9 rounded-full bg-white dark:bg-[#1a1a1a] shadow border border-[#F0CFCF] dark:border-[#3a3a3a] flex items-center justify-center text-[#4A2E2E] dark:text-[#FEF8F0] font-bold text-xs hover:text-[#B83B3B] transition">
+        <button id="rtlToggle" class="w-8 h-8 rounded-full bg-white dark:bg-[#1a1a1a] shadow border border-[#F0CFCF] dark:border-[#3a3a3a] flex items-center justify-center text-[#4A2E2E] dark:text-[#FEF8F0] font-bold text-[0.65rem] hover:text-[#B83B3B] transition">
             <span id="rtlLabel">RTL</span>
         </button>
     </div>
 
-    <!-- SIGNUP CARD - ULTRA COMPACT, NO SCROLLING ANYWHERE ON DESKTOP -->
-    <div class="signup-card w-full max-w-md lg:max-w-[400px] bg-white rounded-2xl lg:rounded-xl shadow-xl border border-[#F0CFCF] compact-card relative z-10">
+    <!-- SIGNUP CARD -->
+    <div class="signup-card bg-white rounded-xl shadow-xl border border-[#F0CFCF] relative z-10">
         
-         <a href="index.html" class="logo-area flex-shrink-0 flex items-center gap-2 group">
-                    <div class="flex flex-col leading-tight">
-                        <span class="text-[#B83B3B] text-xl md:text-2xl font-bold tracking-tight nav-text">Mobilube</span>
-                    </div>
-                </a>
-
-        <div class="text-center mb-3 lg:mb-2">
-            <h1 class="text-2xl lg:text-[1.5rem] font-bold text-[#4A2E2E] text-warm-stone">Create Account</h1>
-            <p class="subhead text-[#6F4B3B] text-xs lg:text-[0.7rem] text-warm-stone opacity-80 mt-0.5">Join Mobilube for effortless mobile maintenance.</p>
+        <div class="flex justify-center mb-3">
+            <a href="index.html" class="logo-area flex items-center group">
+                <div class="flex flex-col leading-tight text-center">
+                    <span class="text-[#B83B3B] font-bold tracking-tight nav-text">Mobilube</span>
+                </div>
+            </a>
         </div>
 
-        <form action="#" method="POST" class="space-y-2.5 lg:space-y-2 form-group-spacing">
+        <div class="text-center">
+            <h1 class="font-bold text-[#4A2E2E] text-warm-stone">Create Account</h1>
+            <p class="subhead text-[#6F4B3B] text-warm-stone opacity-80">Join Mobilube for effortless mobile maintenance.</p>
+        </div>
+
+        <form action="#" method="POST" class="form-group-spacing">
             <!-- Full Name -->
             <div>
-                <label class="block text-xs lg:text-[0.7rem] font-medium text-[#4A2E2E] mb-0.5 lg:mb-1 text-warm-stone text-left">Full Name</label>
+                <label class="block font-medium text-[#4A2E2E] text-warm-stone text-left">Full Name</label>
                 <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 lg:pl-3 flex items-center pointer-events-none">
-                        <i class="far fa-user text-[#C85E5E] text-xs lg:text-[0.7rem]"></i>
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="far fa-user text-[#C85E5E]"></i>
                     </div>
-                    <input type="text" class="input-field w-full pl-9 lg:pl-9 pr-3 py-1.5 lg:py-1.5 rounded-xl lg:rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-xs lg:text-[0.8rem] transition-all" placeholder="John Doe">
+                    <input type="text" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="John Doe">
                 </div>
             </div>
 
             <!-- Phone Number -->
             <div>
-                <label class="block text-xs lg:text-[0.7rem] font-medium text-[#4A2E2E] mb-0.5 lg:mb-1 text-warm-stone text-left">Phone Number</label>
+                <label class="block font-medium text-[#4A2E2E] text-warm-stone text-left">Phone Number</label>
                 <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 lg:pl-3 flex items-center pointer-events-none">
-                        <i class="fas fa-phone-alt text-[#C85E5E] text-[0.65rem] lg:text-[0.7rem]"></i>
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-phone-alt text-[#C85E5E]"></i>
                     </div>
-                    <input type="tel" class="input-field w-full pl-9 lg:pl-9 pr-3 py-1.5 lg:py-1.5 rounded-xl lg:rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-xs lg:text-[0.8rem] transition-all" placeholder="+1 (555) 000-0000">
+                    <input type="tel" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="+1 (555) 000-0000">
                 </div>
             </div>
 
             <!-- Email Address -->
             <div>
-                <label class="block text-xs lg:text-[0.7rem] font-medium text-[#4A2E2E] mb-0.5 lg:mb-1 text-warm-stone text-left">Email Address</label>
+                <label class="block font-medium text-[#4A2E2E] text-warm-stone text-left">Email Address</label>
                 <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 lg:pl-3 flex items-center pointer-events-none">
-                        <i class="far fa-envelope text-[#C85E5E] text-xs lg:text-[0.7rem]"></i>
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="far fa-envelope text-[#C85E5E]"></i>
                     </div>
-                    <input type="email" class="input-field w-full pl-9 lg:pl-9 pr-3 py-1.5 lg:py-1.5 rounded-xl lg:rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-xs lg:text-[0.8rem] transition-all" placeholder="name@example.com">
+                    <input type="email" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="name@example.com">
                 </div>
             </div>
 
-            <!-- Password Field with Eye Toggle -->
+            <!-- Password Field -->
             <div>
-                <label class="block text-xs lg:text-[0.7rem] font-medium text-[#4A2E2E] mb-0.5 lg:mb-1 text-warm-stone text-left">Password</label>
+                <label class="block font-medium text-[#4A2E2E] text-warm-stone text-left">Password</label>
                 <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 lg:pl-3 flex items-center pointer-events-none">
-                        <i class="fas fa-lock text-[#C85E5E] text-xs lg:text-[0.7rem]"></i>
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-lock text-[#C85E5E]"></i>
                     </div>
-                    <input type="password" id="passwordField" class="input-field w-full pl-9 lg:pl-9 password-input py-1.5 lg:py-1.5 rounded-xl lg:rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-xs lg:text-[0.8rem] transition-all" placeholder="••••••••">
+                    <input type="password" id="passwordField" class="input-field w-full pl-9 password-input rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="••••••••">
                     <button type="button" id="togglePassword" class="eye-btn" tabindex="-1">
                         <i class="far fa-eye-slash" id="passwordEyeIcon"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Confirm Password Field with Eye Toggle -->
+            <!-- Confirm Password Field -->
             <div>
-                <label class="block text-xs lg:text-[0.7rem] font-medium text-[#4A2E2E] mb-0.5 lg:mb-1 text-warm-stone text-left">Confirm Password</label>
+                <label class="block font-medium text-[#4A2E2E] text-warm-stone text-left">Confirm Password</label>
                 <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 lg:pl-3 flex items-center pointer-events-none">
-                        <i class="fas fa-shield-alt text-[#C85E5E] text-xs lg:text-[0.7rem]"></i>
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-shield-alt text-[#C85E5E]"></i>
                     </div>
-                    <input type="password" id="confirmPasswordField" class="input-field w-full pl-9 lg:pl-9 password-input py-1.5 lg:py-1.5 rounded-xl lg:rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-xs lg:text-[0.8rem] transition-all" placeholder="••••••••">
+                    <input type="password" id="confirmPasswordField" class="input-field w-full pl-9 password-input rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="••••••••">
                     <button type="button" id="toggleConfirmPassword" class="eye-btn" tabindex="-1">
                         <i class="far fa-eye-slash" id="confirmEyeIcon"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Terms Checkbox with smaller spacing -->
-            <div class="flex items-start gap-1.5 py-0.5">
-                <input id="terms" type="checkbox" class="mt-0.5 h-3.5 w-3.5 text-[#B83B3B] focus:ring-[#B83B3B] border-[#F0CFCF] rounded cursor-pointer">
-                <label for="terms" class="terms-label text-[0.6rem] lg:text-[0.65rem] text-[#4A2E2E] text-warm-stone leading-snug cursor-pointer select-none text-left">
+            <!-- Terms Checkbox -->
+            <div class="flex items-start gap-1.5 py-0.5 mt-1">
+                <input id="terms" type="checkbox" class="mt-0.5 h-3 w-3 text-[#B83B3B] focus:ring-[#B83B3B] border-[#F0CFCF] rounded cursor-pointer">
+                <label for="terms" class="terms-label text-[#4A2E2E] text-warm-stone cursor-pointer select-none text-left">
                     I agree to the <a href="#" class="text-[#B83B3B] font-semibold underline">Terms</a> & <a href="#" class="text-[#B83B3B] font-semibold underline">Privacy</a>.
                 </label>
             </div>
 
-            <!-- Submit Button - compact -->
-            <button type="submit" class="w-full flex justify-center items-center gap-2 bg-[#B83B3B] text-white py-2 lg:py-1.5 rounded-xl lg:rounded-lg text-xs lg:text-[0.8rem] font-bold shadow-md hover:bg-[#9B2E2E] hover:shadow-lg transition-all duration-200 btn-primary-dark">
-                Create Account <i class="fas fa-user-plus rtl-flip text-[0.7rem] ml-1"></i>
+            <!-- Submit Button -->
+            <button type="submit" class="w-full flex justify-center items-center gap-1.5 bg-[#B83B3B] text-white rounded-lg font-bold shadow-md hover:bg-[#9B2E2E] hover:shadow-lg transition-all duration-200 btn-primary-dark">
+                Create Account <i class="fas fa-user-plus rtl-flip text-[0.65rem] ml-1"></i>
             </button>
         </form>
 
-        <!-- Sign In Link - compact -->
-        <p class="footer-link mt-3 lg:mt-2 text-center text-[0.7rem] lg:text-[0.7rem] text-[#6F4B3B] text-warm-stone border-t border-[#F0CFCF] dark:border-[#2a2a2a] pt-3 lg:pt-2">
+        <!-- Sign In Link -->
+        <p class="footer-link text-center text-[#6F4B3B] text-warm-stone border-t border-[#F0CFCF] dark:border-[#2a2a2a]">
             Already have an account? 
             <a href="login.html" class="font-bold text-[#B83B3B] hover:text-[#9B2E2E] transition ml-1">Sign In</a>
         </p>
@@ -319,11 +252,12 @@
     <script>
         (function() {
             const html = document.documentElement;
+            
+            // DARK MODE TOGGLE
             const darkToggle = document.getElementById('darkModeToggle');
             const darkIcon = document.getElementById('darkIcon');
-            
             function updateDarkUI(isDark) {
-                if(darkIcon) darkIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+                if(darkIcon) darkIcon.className = isDark ? 'fas fa-sun text-[0.7rem]' : 'fas fa-moon text-[0.7rem]';
             }
             if(localStorage.getItem('mobilube_dark') === 'enabled') {
                 html.classList.add('dark');
@@ -337,13 +271,13 @@
                 });
             }
 
+            // RTL TOGGLE
             const rtlBtn = document.getElementById('rtlToggle');
             const rtlLabel = document.getElementById('rtlLabel');
             function setDirection(dir) {
                 html.setAttribute('dir', dir);
                 localStorage.setItem('mobilube_dir', dir);
                 if(rtlLabel) rtlLabel.innerText = dir === 'rtl' ? 'LTR' : 'RTL';
-                // Force reflow for RTL adjustments
                 document.body.style.display = 'none';
                 document.body.offsetHeight;
                 document.body.style.display = '';
@@ -356,7 +290,7 @@
                 });
             }
 
-            // PASSWORD EYE TOGGLE FUNCTIONALITY
+            // PASSWORD EYE TOGGLES
             const passwordInput = document.getElementById('passwordField');
             const togglePasswordBtn = document.getElementById('togglePassword');
             const passwordEyeIcon = document.getElementById('passwordEyeIcon');
@@ -366,13 +300,7 @@
                     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                     passwordInput.setAttribute('type', type);
                     if (passwordEyeIcon) {
-                        if (type === 'password') {
-                            passwordEyeIcon.classList.remove('fa-eye');
-                            passwordEyeIcon.classList.add('fa-eye-slash');
-                        } else {
-                            passwordEyeIcon.classList.remove('fa-eye-slash');
-                            passwordEyeIcon.classList.add('fa-eye');
-                        }
+                        passwordEyeIcon.className = type === 'password' ? 'far fa-eye-slash' : 'far fa-eye';
                     }
                 });
             }
@@ -386,21 +314,14 @@
                     const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                     confirmPasswordInput.setAttribute('type', type);
                     if (confirmEyeIcon) {
-                        if (type === 'password') {
-                            confirmEyeIcon.classList.remove('fa-eye');
-                            confirmEyeIcon.classList.add('fa-eye-slash');
-                        } else {
-                            confirmEyeIcon.classList.remove('fa-eye-slash');
-                            confirmEyeIcon.classList.add('fa-eye');
-                        }
+                        confirmEyeIcon.className = type === 'password' ? 'far fa-eye-slash' : 'far fa-eye';
                     }
                 });
             }
 
-            // Form validation with password match and terms checkbox
+            // FORM VALIDATION
             const form = document.querySelector('form');
             if (form) {
-                // Helper to remove error elements
                 function removeError(id) {
                     const err = document.getElementById(id);
                     if (err) err.remove();
@@ -412,7 +333,6 @@
                     const termsCheck = document.getElementById('terms');
                     let hasError = false;
                     
-                    // Remove previous errors
                     removeError('pwdMatchError');
                     removeError('termsError');
                     
@@ -443,66 +363,28 @@
                         e.preventDefault();
                         alert('Account created successfully! (Demo)');
                         form.reset();
-                        // Reset eye icons to default
                         if(passwordInput) passwordInput.setAttribute('type', 'password');
                         if(confirmPasswordInput) confirmPasswordInput.setAttribute('type', 'password');
-                        if(passwordEyeIcon) {
-                            passwordEyeIcon.classList.remove('fa-eye');
-                            passwordEyeIcon.classList.add('fa-eye-slash');
-                        }
-                        if(confirmEyeIcon) {
-                            confirmEyeIcon.classList.remove('fa-eye');
-                            confirmEyeIcon.classList.add('fa-eye-slash');
-                        }
+                        if(passwordEyeIcon) passwordEyeIcon.className = 'far fa-eye-slash';
+                        if(confirmEyeIcon) confirmEyeIcon.className = 'far fa-eye-slash';
                         return false;
                     }
                     return !hasError;
                 });
                 
-                // Clear errors on input change
                 if (confirmPasswordInput) {
-                    confirmPasswordInput.addEventListener('input', function() {
-                        const errorDiv = document.getElementById('pwdMatchError');
-                        if (errorDiv) errorDiv.remove();
-                    });
+                    confirmPasswordInput.addEventListener('input', () => removeError('pwdMatchError'));
                 }
                 if (passwordInput) {
-                    passwordInput.addEventListener('input', function() {
-                        const errorDiv = document.getElementById('pwdMatchError');
-                        if (errorDiv) errorDiv.remove();
-                    });
+                    passwordInput.addEventListener('input', () => removeError('pwdMatchError'));
                 }
                 const termsCheck = document.getElementById('terms');
                 if (termsCheck) {
                     termsCheck.addEventListener('change', function() {
-                        const termsError = document.getElementById('termsError');
-                        if (termsError && this.checked) termsError.remove();
+                        if (this.checked) removeError('termsError');
                     });
                 }
             }
-            
-            // Ensure desktop: NO SCROLLING, card fully visible, no internal scroll
-            function fixDesktopScroll() {
-                if(window.innerWidth >= 1024) {
-                    document.body.style.overflow = 'hidden';
-                    document.body.style.height = '100vh';
-                    document.body.style.margin = '0';
-                    document.body.style.padding = '0';
-                    // Ensure card has no scrollbar and fits perfectly
-                    const card = document.querySelector('.signup-card');
-                    if(card) {
-                        card.style.overflow = 'visible';
-                        card.style.maxHeight = 'none';
-                        card.style.height = 'auto';
-                    }
-                } else {
-                    document.body.style.overflow = '';
-                    document.body.style.height = '';
-                }
-            }
-            
-            fixDesktopScroll();
-            window.addEventListener('resize', fixDesktopScroll);
         })();
     </script>
 </body>
