@@ -219,6 +219,23 @@
         .image-overlay-gradient {
             background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
         }
+        /* ✅ Mobile footer logo center fix */
+@media (max-width: 640px) {
+  footer .logo-area {
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  footer .logo-area > div {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  footer .logo-area span {
+    display: block;
+    text-align: center;
+  }
+}
     </style>
 </head>
 <body class="bg-[#FEF8F0] font-sans antialiased">

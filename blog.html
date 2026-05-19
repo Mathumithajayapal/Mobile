@@ -270,6 +270,23 @@
             transform: translateY(-6px);
             box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.2);
         }
+        /* ✅ Mobile footer logo center fix */
+@media (max-width: 640px) {
+  footer .logo-area {
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  footer .logo-area > div {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  footer .logo-area span {
+    display: block;
+    text-align: center;
+  }
+}
     </style>
 </head>
 <body class="bg-[#FEF8F0] font-sans antialiased">
