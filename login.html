@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Login | Mobilube - Mobile Oil Change</title>
-          <link rel="icon" type="image/jpeg" href="images\favicon.webp">
+    <link rel="icon" type="image/jpeg" href="images\favicon.webp">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,8 +39,9 @@
         html[dir="rtl"] .pl-11 { padding-left: 1rem; padding-right: 2.75rem; }
         html[dir="rtl"] .left-0 { left: auto; right: 0; }
         html[dir="rtl"] .pl-4 { padding-left: 0; padding-right: 1rem; }
+        html[dir="rtl"] .social-btn i:first-child { margin-right: 0; margin-left: 0.5rem; }
         
-        /* DARK MODE - Exactly preserved */
+        /* DARK MODE */
         html.dark body { background-color: #0a0a0a !important; }
         html.dark .text-warm-stone, html.dark h1, html.dark h2, html.dark p, html.dark label { color: #FEF8F0 !important; }
         html.dark .text-ruby-mist { color: #E07A7A !important; }
@@ -49,6 +50,22 @@
         html.dark .input-field::placeholder { color: #888888 !important; }
         html.dark .btn-primary-dark { background-color: #2a2a2a !important; color: #E07A7A !important; border: 1px solid #4a2e2e; }
         html.dark .btn-primary-dark:hover { background-color: #3a2a2a !important; }
+        html.dark .social-btn {
+            background-color: #1a1a1a !important;
+            border-color: #3a3a3a !important;
+            color: #FEF8F0 !important;
+        }
+        html.dark .social-btn:hover {
+            background-color: #252525 !important;
+            border-color: #5a3a3a !important;
+        }
+        html.dark .divider span {
+            background-color: #121212 !important;
+            color: #aaa !important;
+        }
+        html.dark .divider:before, html.dark .divider:after {
+            background-color: #2a2a2a !important;
+        }
 
         /* Floating animation for logo */
         .floating-leaf { animation: floatLeaf 6s ease-in-out infinite; }
@@ -56,6 +73,94 @@
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-5px) rotate(4deg); }
             100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        /* Social buttons styling */
+        .social-auth-section {
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .social-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: #ffffff;
+            border: 1px solid #F0CFCF;
+            border-radius: 0.75rem;
+            padding: 0.6rem 0;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #4A2E2E;
+        }
+        .social-btn i {
+            font-size: 1rem;
+        }
+        .social-btn.google-btn:hover {
+            background-color: #fef2f0;
+            border-color: #B83B3B;
+        }
+        .social-btn.apple-btn:hover {
+            background-color: #f5f5f7;
+            border-color: #B83B3B;
+        }
+        html.dark .social-btn.google-btn:hover {
+            background-color: #2a2a2a;
+        }
+        html.dark .social-btn.apple-btn:hover {
+            background-color: #2a2a2a;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0.75rem 0;
+        }
+        .divider:before, .divider:after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #F0CFCF;
+        }
+        .divider:before {
+            margin-right: 0.75rem;
+        }
+        .divider:after {
+            margin-left: 0.75rem;
+        }
+        .divider span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #8B6B5C;
+            background-color: #ffffff;
+            padding: 0 0.5rem;
+        }
+        html.dark .divider span {
+            background-color: #121212;
+            color: #aaa;
+        }
+        html.dark .divider:before, html.dark .divider:after {
+            border-bottom-color: #2a2a2a;
+        }
+        
+        /* Compact adjustments for mobile */
+        @media (max-width: 480px) {
+            .social-btn {
+                font-size: 0.7rem;
+                padding: 0.5rem 0;
+            }
+            .social-btn i {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -72,21 +177,22 @@
 
     <div class="w-full max-w-md bg-white rounded-3xl shadow-xl border border-[#F0CFCF] p-8 sm:p-10 relative z-10">
         
-         <div class="flex justify-center mb-6">
-    <a href="index.html" class="logo-area flex items-center group">
-        <div class="flex flex-col leading-tight text-center">
-            <span class="text-[#B83B3B] text-2xl font-bold tracking-tight nav-text">
-                Mobilube
-            </span>
+        <div class="flex justify-center mb-6">
+            <a href="index.html" class="logo-area flex items-center group">
+                <div class="flex flex-col leading-tight text-center">
+                    <span class="text-[#B83B3B] text-2xl font-bold tracking-tight nav-text">
+                        Mobilube
+                    </span>
+                </div>
+            </a>
         </div>
-    </a>
-</div>
 
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold text-[#4A2E2E] mb-2 text-warm-stone">Welcome Back</h1>
             <p class="text-[#6F4B3B] text-sm text-warm-stone opacity-80">Sign in to book your next mobile oil change and manage appointments.</p>
         </div>
 
+        <!-- Email Sign In Form -->
         <form action="#" method="POST" class="space-y-5">
             <div>
                 <label for="email" class="block text-sm font-medium text-[#4A2E2E] mb-1.5 text-warm-stone text-left">Email Address</label>
@@ -98,37 +204,20 @@
                 </div>
             </div>
 
-          <div>
-    <label for="password" class="block text-sm font-medium text-[#4A2E2E] mb-1.5 text-warm-stone text-left">
-        Password
-    </label>
-
-    <div class="relative">
-
-        <!-- Lock Icon -->
-        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <i class="fas fa-lock text-[#C85E5E]"></i>
-        </div>
-
-        <!-- Password Input -->
-        <input 
-            type="password" 
-            id="password" 
-            class="input-field w-full pl-11 pr-12 py-3 rounded-xl bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-sm transition-all" 
-            placeholder="••••••••"
-        >
-
-        <!-- Eye Icon -->
-        <button 
-            type="button" 
-            id="togglePassword"
-            class="absolute inset-y-0 right-0 pr-4 flex items-center text-[#C85E5E] hover:text-[#B83B3B] transition"
-        >
-            <i id="eyeIcon" class="fas fa-eye"></i>
-        </button>
-
-    </div>
-</div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-[#4A2E2E] mb-1.5 text-warm-stone text-left">
+                    Password
+                </label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fas fa-lock text-[#C85E5E]"></i>
+                    </div>
+                    <input type="password" id="password" class="input-field w-full pl-11 pr-12 py-3 rounded-xl bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] text-sm transition-all" placeholder="••••••••">
+                    <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-4 flex items-center text-[#C85E5E] hover:text-[#B83B3B] transition">
+                        <i id="eyeIcon" class="fas fa-eye"></i>
+                    </button>
+                </div>
+            </div>
 
             <div class="flex items-center justify-between pt-1">
                 <div class="flex items-center">
@@ -138,7 +227,7 @@
                     </label>
                 </div>
                 <div class="text-sm">
-                    <a href="#" class="font-medium text-[#B83B3B] hover:text-[#9B2E2E] transition">Forgot password?</a>
+                    <a href="#" id="forgotPasswordLink" class="font-medium text-[#B83B3B] hover:text-[#9B2E2E] transition">Forgot password?</a>
                 </div>
             </div>
 
@@ -147,7 +236,25 @@
             </button>
         </form>
 
-        <p class="mt-8 text-center text-sm text-[#6F4B3B] text-warm-stone border-t border-[#F0CFCF] dark:border-[#2a2a2a] pt-6">
+        <!-- GOOGLE & APPLE SIGN-IN SECTION - placed exactly above the "Create Account" link -->
+        <div class="social-auth-section">
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+            <div class="social-buttons">
+                <button type="button" id="googleLoginBtn" class="social-btn google-btn">
+                    <i class="fab fa-google text-[#DB4437]"></i>
+                    <span>Google</span>
+                </button>
+                <button type="button" id="appleLoginBtn" class="social-btn apple-btn">
+                    <i class="fab fa-apple text-[#000000] dark:text-white"></i>
+                    <span>Apple</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Create Account Link (Sign Up) -->
+        <p class="mt-6 text-center text-sm text-[#6F4B3B] text-warm-stone border-t border-[#F0CFCF] dark:border-[#2a2a2a] pt-6">
             Need preventative maintenance? <br class="sm:hidden">
             <a href="signup.html" class="font-bold text-[#B83B3B] hover:text-[#9B2E2E] transition">Create Account</a>
         </p>
@@ -168,11 +275,13 @@
                 html.classList.add('dark');
                 updateDarkUI(true);
             }
-            darkToggle.addEventListener('click', () => {
-                const isDark = html.classList.toggle('dark');
-                localStorage.setItem('mobilube_dark', isDark ? 'enabled' : 'disabled');
-                updateDarkUI(isDark);
-            });
+            if(darkToggle) {
+                darkToggle.addEventListener('click', () => {
+                    const isDark = html.classList.toggle('dark');
+                    localStorage.setItem('mobilube_dark', isDark ? 'enabled' : 'disabled');
+                    updateDarkUI(isDark);
+                });
+            }
 
             // RTL Toggle
             const rtlBtn = document.getElementById('rtlToggle');
@@ -182,28 +291,140 @@
                 html.setAttribute('dir', dir);
                 localStorage.setItem('mobilube_dir', dir);
                 if(rtlLabel) rtlLabel.innerText = dir === 'rtl' ? 'LTR' : 'RTL';
+                // Force reflow for proper RTL rendering
+                document.body.style.display = 'none';
+                document.body.offsetHeight;
+                document.body.style.display = '';
             }
             
             const savedDir = localStorage.getItem('mobilube_dir') || 'ltr';
             setDirection(savedDir);
             
-            rtlBtn.addEventListener('click', () => {
-                setDirection(html.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl');
-            });
+            if(rtlBtn) {
+                rtlBtn.addEventListener('click', () => {
+                    setDirection(html.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl');
+                });
+            }
+            
             // Password Toggle
-const togglePassword = document.getElementById('togglePassword');
-const passwordInput = document.getElementById('password');
-const eyeIcon = document.getElementById('eyeIcon');
-
-togglePassword.addEventListener('click', () => {
-    const isPassword = passwordInput.type === 'password';
-
-    passwordInput.type = isPassword ? 'text' : 'password';
-
-    eyeIcon.className = isPassword
-        ? 'fas fa-eye-slash'
-        : 'fas fa-eye';
-});
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (togglePassword && passwordInput && eyeIcon) {
+                togglePassword.addEventListener('click', () => {
+                    const isPassword = passwordInput.type === 'password';
+                    passwordInput.type = isPassword ? 'text' : 'password';
+                    eyeIcon.className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
+                });
+            }
+            
+            // SOCIAL LOGIN HANDLERS (Google & Apple as alternative login methods)
+            const googleBtn = document.getElementById('googleLoginBtn');
+            const appleBtn = document.getElementById('appleLoginBtn');
+            
+            function handleSocialLogin(provider) {
+                // Demo: simulate OAuth authentication flow
+                // In production, this would redirect to Google/Apple OAuth endpoints
+                alert(`🔐 ${provider} sign-in initiated.\n\nYou would be redirected to ${provider} authentication.\nAfter successful verification, you'll be logged into Mobilube.`);
+                // Example production redirect: window.location.href = `/auth/${provider.toLowerCase()}`;
+                console.log(`${provider} login alternative method triggered`);
+            }
+            
+            if (googleBtn) {
+                googleBtn.addEventListener('click', () => handleSocialLogin('Google'));
+            }
+            if (appleBtn) {
+                appleBtn.addEventListener('click', () => handleSocialLogin('Apple'));
+            }
+            
+            // FORM VALIDATION & DEMO LOGIN
+            const form = document.querySelector('form');
+            const emailInput = document.getElementById('email');
+            const rememberCheckbox = document.getElementById('remember-me');
+            const forgotLink = document.getElementById('forgotPasswordLink');
+            
+            // Forgot password demo handler
+            if (forgotLink) {
+                forgotLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const email = emailInput ? emailInput.value.trim() : '';
+                    if (email && email.includes('@')) {
+                        alert(`📧 Password reset link sent to ${email}\n(Demo mode - check console)`);
+                    } else {
+                        alert('Please enter your email address first to receive password reset instructions.');
+                    }
+                });
+            }
+            
+            if (form) {
+                function removeLoginError() {
+                    const err = document.getElementById('loginErrorMsg');
+                    if (err) err.remove();
+                }
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = emailInput ? emailInput.value.trim() : '';
+                    const password = passwordInput ? passwordInput.value : '';
+                    let hasError = false;
+                    
+                    removeLoginError();
+                    
+                    if (!email || !email.includes('@')) {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.id = 'loginErrorMsg';
+                        errorDiv.className = 'text-xs text-red-600 dark:text-red-400 mt-2 flex items-center gap-1';
+                        errorDiv.innerHTML = '<i class="fas fa-exclamation-circle text-[0.65rem]"></i> Please enter a valid email address.';
+                        if (emailInput && emailInput.parentElement && emailInput.parentElement.parentElement) {
+                            emailInput.parentElement.parentElement.insertAdjacentElement('beforeend', errorDiv);
+                        }
+                        hasError = true;
+                    } else if (!password || password.length < 1) {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.id = 'loginErrorMsg';
+                        errorDiv.className = 'text-xs text-red-600 dark:text-red-400 mt-2 flex items-center gap-1';
+                        errorDiv.innerHTML = '<i class="fas fa-exclamation-circle text-[0.65rem]"></i> Please enter your password.';
+                        const passwordContainer = passwordInput?.parentElement?.parentElement;
+                        if (passwordContainer) passwordContainer.insertAdjacentElement('beforeend', errorDiv);
+                        hasError = true;
+                    }
+                    
+                    if (!hasError) {
+                        // Demo successful login
+                        alert(`✅ Welcome back! You have successfully signed in.\n(Demo mode - email: ${email})`);
+                        if (rememberCheckbox && rememberCheckbox.checked) {
+                            localStorage.setItem('mobilube_remembered_email', email);
+                            console.log('Remember me enabled - email saved locally');
+                        } else if (rememberCheckbox) {
+                            localStorage.removeItem('mobilube_remembered_email');
+                        }
+                        form.reset();
+                        // Reset password field type to password after reset
+                        if (passwordInput) passwordInput.setAttribute('type', 'password');
+                        if (eyeIcon) eyeIcon.className = 'fas fa-eye';
+                        // In a real app: window.location.href = 'dashboard.html';
+                    }
+                });
+                
+                // Real-time error removal on input
+                if (emailInput) {
+                    emailInput.addEventListener('input', () => removeLoginError());
+                }
+                if (passwordInput) {
+                    passwordInput.addEventListener('input', () => removeLoginError());
+                }
+            }
+            
+            // Auto-fill remembered email if exists (nice UX for "Remember me")
+            const rememberedEmail = localStorage.getItem('mobilube_remembered_email');
+            if (rememberedEmail && emailInput) {
+                emailInput.value = rememberedEmail;
+                if (rememberCheckbox) rememberCheckbox.checked = true;
+            }
+            
+            // Optional: Add demo note for social login (transparent helper)
+            console.log('Mobilube Login Page — Google & Apple sign-in options added as alternative login methods.');
         })();
     </script>
 </body>

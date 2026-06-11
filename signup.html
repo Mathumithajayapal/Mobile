@@ -39,6 +39,7 @@
         html[dir="rtl"] .left-0 { left: auto; right: 0; }
         html[dir="rtl"] .absolute.inset-y-0.left-0 { left: auto; right: 0; }
         html[dir="rtl"] .eye-btn { right: auto; left: 12px; }
+        html[dir="rtl"] .social-btn i:first-child { margin-right: 0; margin-left: 0.5rem; }
         
         /* DARK MODE */
         html.dark body { background-color: #0a0a0a !important; }
@@ -49,6 +50,22 @@
         html.dark .input-field::placeholder { color: #888888 !important; }
         html.dark .btn-primary-dark { background-color: #2a2a2a !important; color: #E07A7A !important; border: 1px solid #4a2e2e; }
         html.dark .btn-primary-dark:hover { background-color: #3a2a2a !important; }
+        html.dark .social-btn {
+            background-color: #1a1a1a !important;
+            border-color: #3a3a3a !important;
+            color: #FEF8F0 !important;
+        }
+        html.dark .social-btn:hover {
+            background-color: #252525 !important;
+            border-color: #5a3a3a !important;
+        }
+        html.dark .divider span {
+            background-color: #121212 !important;
+            color: #aaa !important;
+        }
+        html.dark .divider:before, html.dark .divider:after {
+            background-color: #2a2a2a !important;
+        }
 
         /* Eye button styling */
         .eye-btn {
@@ -77,7 +94,7 @@
 
         /* UNIVERSAL NO-SCROLL & CENTERED LAYOUT */
         html, body {
-            overflow: hidden !important; /* Strictly prevents scrolling everywhere */
+            overflow: hidden !important;
             height: 100vh;
             width: 100vw;
             display: flex;
@@ -85,22 +102,24 @@
             justify-content: center;
             margin: 0;
             padding: 0;
-            touch-action: none; /* Prevents mobile pull-to-refresh & swipe scrolls */
+            touch-action: none;
         }
 
-        /* ULTRA COMPACT CARD - Enforced globally to prevent floating button overlap */
+        /* COMPACT CARD - now with subtle scroll if needed but body locked */
         .signup-card {
             width: 90%;
             max-width: 380px !important;
             padding: 1.25rem 1.5rem !important;
-            overflow: visible !important;
-            max-height: none !important;
-            height: auto !important;
-            z-index: 10;
+            overflow-y: auto !important;
+            max-height: 96vh !important;
+            scrollbar-width: thin;
             box-sizing: border-box;
         }
+        .signup-card::-webkit-scrollbar {
+            width: 3px;
+        }
 
-        /* Aggressive form minimization for mobile & tablet */
+        /* Aggressive form minimization */
         .logo-area span.nav-text { font-size: 1.35rem !important; }
         .signup-card h1 { font-size: 1.25rem !important; margin-bottom: 0.15rem !important; }
         .signup-card .subhead { font-size: 0.65rem !important; margin-bottom: 0.75rem !important; }
@@ -115,7 +134,6 @@
             font-size: 0.75rem !important; 
         }
         
-        /* Icon positioning fixes for compact inputs */
         .input-field.pl-9 { padding-left: 2rem !important; }
         html[dir="rtl"] .input-field.pl-9 { padding-left: 0.75rem !important; padding-right: 2rem !important; }
         .absolute.inset-y-0.left-0.pl-3 { padding-left: 0.75rem !important; }
@@ -136,11 +154,88 @@
             padding-top: 0.6rem !important; 
             font-size: 0.65rem !important; 
         }
+        
+        /* Social buttons styling - placed just above signin link */
+        .social-auth-section {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .social-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: #ffffff;
+            border: 1px solid #F0CFCF;
+            border-radius: 0.5rem;
+            padding: 0.45rem 0;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #4A2E2E;
+        }
+        .social-btn i {
+            font-size: 0.85rem;
+        }
+        .social-btn.google-btn:hover {
+            background-color: #fef2f0;
+            border-color: #B83B3B;
+        }
+        .social-btn.apple-btn:hover {
+            background-color: #f5f5f7;
+            border-color: #B83B3B;
+        }
+        html.dark .social-btn.google-btn:hover {
+            background-color: #2a2a2a;
+        }
+        html.dark .social-btn.apple-btn:hover {
+            background-color: #2a2a2a;
+        }
+        
+        .divider-text {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0.4rem 0 0.3rem;
+        }
+        .divider-text:before, .divider-text:after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #F0CFCF;
+        }
+        .divider-text:before {
+            margin-right: 0.75rem;
+        }
+        .divider-text:after {
+            margin-left: 0.75rem;
+        }
+        .divider-text span {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #8B6B5C;
+            background-color: #ffffff;
+            padding: 0 0.4rem;
+        }
+        html.dark .divider-text span {
+            background-color: #121212;
+            color: #aaa;
+        }
+        html.dark .divider-text:before, html.dark .divider-text:after {
+            border-bottom-color: #2a2a2a;
+        }
     </style>
 </head>
 <body class="bg-[#FEF8F0] font-sans antialiased">
 
-    <!-- Theme & RTL Toggle Buttons (Slightly minimized to avoid collision) -->
+    <!-- Theme & RTL Toggle Buttons -->
     <div class="fixed top-3 right-3 flex gap-2.5 z-50">
         <button id="darkModeToggle" class="w-8 h-8 rounded-full bg-white dark:bg-[#1a1a1a] shadow border border-[#F0CFCF] dark:border-[#3a3a3a] flex items-center justify-center text-[#4A2E2E] dark:text-[#FEF8F0] hover:text-[#B83B3B] transition">
             <i id="darkIcon" class="fas fa-moon text-[0.7rem]"></i>
@@ -166,6 +261,7 @@
             <p class="subhead text-[#6F4B3B] text-warm-stone opacity-80">Join Mobilube for effortless mobile maintenance.</p>
         </div>
 
+        <!-- Email Signup Form -->
         <form action="#" method="POST" class="form-group-spacing">
             <!-- Full Name -->
             <div>
@@ -174,7 +270,7 @@
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <i class="far fa-user text-[#C85E5E]"></i>
                     </div>
-                    <input type="text" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="John Doe">
+                    <input type="text" id="fullNameInput" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="John Doe">
                 </div>
             </div>
 
@@ -185,7 +281,7 @@
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <i class="fas fa-phone-alt text-[#C85E5E]"></i>
                     </div>
-                    <input type="tel" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="+1 (555) 000-0000">
+                    <input type="tel" id="phoneInput" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="+1 (555) 000-0000">
                 </div>
             </div>
 
@@ -196,7 +292,7 @@
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <i class="far fa-envelope text-[#C85E5E]"></i>
                     </div>
-                    <input type="email" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="name@example.com">
+                    <input type="email" id="emailInput" class="input-field w-full pl-9 pr-3 rounded-lg bg-gray-50/50 dark:bg-transparent border border-[#F0CFCF] focus:outline-none focus:ring-2 focus:ring-[#B83B3B]/20 focus:border-[#B83B3B] transition-all" placeholder="name@example.com">
                 </div>
             </div>
 
@@ -241,6 +337,23 @@
                 Create Account <i class="fas fa-user-plus rtl-flip text-[0.65rem] ml-1"></i>
             </button>
         </form>
+
+        <!-- GOOGLE & APPLE SIGN-IN SECTION - placed exactly above the "Already have an account?" link -->
+        <div class="social-auth-section">
+            <div class="divider-text">
+                <span>or continue with</span>
+            </div>
+            <div class="social-buttons">
+                <button type="button" id="googleSignUpBtn" class="social-btn google-btn">
+                    <i class="fab fa-google text-[#DB4437]"></i>
+                    <span>Google</span>
+                </button>
+                <button type="button" id="appleSignUpBtn" class="social-btn apple-btn">
+                    <i class="fab fa-apple text-[#000000] dark:text-white"></i>
+                    <span>Apple</span>
+                </button>
+            </div>
+        </div>
 
         <!-- Sign In Link -->
         <p class="footer-link text-center text-[#6F4B3B] text-warm-stone border-t border-[#F0CFCF] dark:border-[#2a2a2a]">
@@ -319,22 +432,94 @@
                 });
             }
 
-            // FORM VALIDATION
+            // Helper to remove error messages
+            function removeError(id) {
+                const err = document.getElementById(id);
+                if (err) err.remove();
+            }
+            
+            // SOCIAL AUTH HANDLERS (Google & Apple as alternative login methods)
+            const googleBtn = document.getElementById('googleSignUpBtn');
+            const appleBtn = document.getElementById('appleSignUpBtn');
+            
+            function handleSocialSignUp(provider) {
+                const agreeTerms = document.getElementById('terms');
+                // Check terms acceptance before social signup (improves UX & compliance)
+                if (!agreeTerms.checked) {
+                    let existingSocialError = document.getElementById('socialTermsError');
+                    if (!existingSocialError) {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.id = 'socialTermsError';
+                        errorDiv.className = 'text-[0.6rem] text-red-600 dark:text-red-400 mt-1 ml-1 flex items-center gap-1';
+                        errorDiv.innerHTML = '<i class="fas fa-exclamation-circle text-[0.55rem]"></i> Please accept Terms & Privacy to continue with ' + provider + '.';
+                        const socialContainer = document.querySelector('.social-auth-section');
+                        if (socialContainer) {
+                            socialContainer.insertAdjacentElement('beforebegin', errorDiv);
+                            setTimeout(() => { if(errorDiv) errorDiv.remove(); }, 3500);
+                        }
+                    }
+                    return;
+                }
+                const existingErr = document.getElementById('socialTermsError');
+                if(existingErr) existingErr.remove();
+                
+                // Demo: simulate OAuth redirect / authentication
+                alert(`✨ ${provider} sign-in initiated.\n\nIn a production environment, this would redirect to ${provider} OAuth.\nAfter authentication, you'll be logged into Mobilube.`);
+                // In real implementation: window.location.href = `/auth/${provider.toLowerCase()}`;
+                console.log(`${provider} sign-up alternative method triggered, terms accepted.`);
+            }
+            
+            if (googleBtn) {
+                googleBtn.addEventListener('click', () => handleSocialSignUp('Google'));
+            }
+            if (appleBtn) {
+                appleBtn.addEventListener('click', () => handleSocialSignUp('Apple'));
+            }
+            
+            // Terms checkbox change -> remove social error if any
+            const termsCheckbox = document.getElementById('terms');
+            if (termsCheckbox) {
+                termsCheckbox.addEventListener('change', function() {
+                    const socialErr = document.getElementById('socialTermsError');
+                    if (socialErr && this.checked) socialErr.remove();
+                    if (this.checked) removeError('termsError');
+                });
+            }
+
+            // FORM VALIDATION (standard email signup)
             const form = document.querySelector('form');
             if (form) {
-                function removeError(id) {
-                    const err = document.getElementById(id);
-                    if (err) err.remove();
-                }
-                
                 form.addEventListener('submit', function(e) {
                     const pwd = passwordInput ? passwordInput.value : '';
                     const confirmPwd = confirmPasswordInput ? confirmPasswordInput.value : '';
                     const termsCheck = document.getElementById('terms');
+                    const fullName = document.getElementById('fullNameInput') ? document.getElementById('fullNameInput').value.trim() : '';
+                    const email = document.getElementById('emailInput') ? document.getElementById('emailInput').value.trim() : '';
                     let hasError = false;
                     
                     removeError('pwdMatchError');
                     removeError('termsError');
+                    removeError('basicInfoError');
+                    
+                    if (fullName === '') {
+                        e.preventDefault();
+                        const errorDiv = document.createElement('div');
+                        errorDiv.id = 'basicInfoError';
+                        errorDiv.className = 'text-[0.6rem] text-red-600 dark:text-red-400 mt-0.5 ml-1 flex items-center gap-1';
+                        errorDiv.innerHTML = '<i class="fas fa-exclamation-circle text-[0.55rem]"></i> Full name is required.';
+                        const nameContainer = document.getElementById('fullNameInput')?.parentElement;
+                        if (nameContainer) nameContainer.insertAdjacentElement('afterend', errorDiv);
+                        hasError = true;
+                    } else if (email === '' || !email.includes('@')) {
+                        e.preventDefault();
+                        const errorDiv = document.createElement('div');
+                        errorDiv.id = 'basicInfoError';
+                        errorDiv.className = 'text-[0.6rem] text-red-600 dark:text-red-400 mt-0.5 ml-1 flex items-center gap-1';
+                        errorDiv.innerHTML = '<i class="fas fa-exclamation-circle text-[0.55rem]"></i> Valid email is required.';
+                        const emailContainer = document.getElementById('emailInput')?.parentElement;
+                        if (emailContainer) emailContainer.insertAdjacentElement('afterend', errorDiv);
+                        hasError = true;
+                    }
                     
                     if (pwd !== confirmPwd) {
                         e.preventDefault();
@@ -344,6 +529,16 @@
                         errorDiv.innerHTML = '<i class="fas fa-exclamation-circle text-[0.55rem]"></i> Passwords do not match.';
                         if (confirmPasswordInput && confirmPasswordInput.parentElement) {
                             confirmPasswordInput.parentElement.insertAdjacentElement('afterend', errorDiv);
+                        }
+                        hasError = true;
+                    } else if (pwd.length > 0 && pwd.length < 6) {
+                        e.preventDefault();
+                        const errorDiv = document.createElement('div');
+                        errorDiv.id = 'pwdMatchError';
+                        errorDiv.className = 'text-[0.6rem] text-red-600 dark:text-red-400 mt-0.5 ml-1 flex items-center gap-1';
+                        errorDiv.innerHTML = '<i class="fas fa-exclamation-circle text-[0.55rem]"></i> Password must be at least 6 characters.';
+                        if (passwordInput && passwordInput.parentElement) {
+                            passwordInput.parentElement.insertAdjacentElement('afterend', errorDiv);
                         }
                         hasError = true;
                     }
@@ -361,12 +556,15 @@
                     
                     if (!hasError) {
                         e.preventDefault();
-                        alert('Account created successfully! (Demo)');
+                        alert('✅ Account created successfully! Welcome to Mobilube.');
                         form.reset();
                         if(passwordInput) passwordInput.setAttribute('type', 'password');
                         if(confirmPasswordInput) confirmPasswordInput.setAttribute('type', 'password');
                         if(passwordEyeIcon) passwordEyeIcon.className = 'far fa-eye-slash';
                         if(confirmEyeIcon) confirmEyeIcon.className = 'far fa-eye-slash';
+                        removeError('basicInfoError');
+                        removeError('pwdMatchError');
+                        removeError('termsError');
                         return false;
                     }
                     return !hasError;
@@ -378,12 +576,10 @@
                 if (passwordInput) {
                     passwordInput.addEventListener('input', () => removeError('pwdMatchError'));
                 }
-                const termsCheck = document.getElementById('terms');
-                if (termsCheck) {
-                    termsCheck.addEventListener('change', function() {
-                        if (this.checked) removeError('termsError');
-                    });
-                }
+                const fullNameLive = document.getElementById('fullNameInput');
+                const emailLive = document.getElementById('emailInput');
+                if (fullNameLive) fullNameLive.addEventListener('input', () => removeError('basicInfoError'));
+                if (emailLive) emailLive.addEventListener('input', () => removeError('basicInfoError'));
             }
         })();
     </script>

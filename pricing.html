@@ -236,99 +236,173 @@
     text-align: center;
   }
 }
+html[dir="rtl"] footer .logo-area {
+    justify-content: flex-end !important;
+}
+
+html[dir="rtl"] footer .logo-area > div {
+    align-items: flex-end !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] footer .logo-area span {
+    text-align: right !important;
+}
+/* Hero banner secondary button */
+.view-process-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #4A2E2E;
+    border: 1px solid #F0CFCF;
+}
+
+.view-process-btn:hover {
+    background-color: #ffffff;
+}
+
+/* Dark mode fix */
+html.dark .view-process-btn {
+    background-color: #1f1f1f !important;
+    color: #FEF8F0 !important;
+    border-color: #4a4a4a !important;
+}
+
+html.dark .view-process-btn:hover {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+}
     </style>
 </head>
 <body class="bg-[#FEF8F0] font-sans antialiased">
 
       <!-- ========== HAMBURGER NAVBAR (FULLY FUNCTIONAL) ========== -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50 w-full border-b border-gray-200 nav-bar">
+  <nav class="bg-white shadow-sm sticky top-0 z-50 w-full border-b border-gray-200 nav-bar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="navbar-flex flex justify-between items-center h-16 md:h-20">
-                <!-- Logo area - Mobilube with red color scheme -->
                <a href="index.html" class="logo-area flex-shrink-0 flex items-center gap-2 group">
-                    <div class="flex flex-col leading-tight">
-                        <span class="text-[#B83B3B] text-xl md:text-2xl font-bold tracking-tight nav-text">Mobilube</span>
-                    </div>
-                </a>
-
-                <!-- Desktop links -->
+    <div class="flex flex-col leading-tight">
+        <span class="text-[#B83B3B] dark:text-[#B83B3B] text-xl md:text-2xl font-bold tracking-tight">
+            Mobilube
+        </span>
+    </div>
+</a>
                 <div class="nav-links hidden xl:flex items-center space-x-6 xl:space-x-8">
                     <div class="relative group">
-                        <a href="#" class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition flex items-center gap-1 nav-text">Home <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i></a>
-                        <div class="home-dropdown absolute left-0 mt-2 w-40 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-[#F0CFCF] overflow-hidden dropdown-bg">
-                            <a href="index.html" class="block px-4 py-2.5 text-sm hover:bg-[#FEF0F0] transition flex items-center gap-2 dropdown-item">Home 1</a>
-                            <a href="contact.html" class="block px-4 py-2.5 text-sm hover:bg-[#FEF0F0] transition flex items-center gap-2 border-t border-[#FCE6E6] dropdown-item">Home 2</a>
+                        <a href="#"
+                            class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition flex items-center gap-1 nav-text">Home
+                            <i
+                                class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i></a>
+                        <div
+                            class="home-dropdown absolute left-0 mt-2 w-40 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-[#F0CFCF] overflow-hidden dropdown-bg">
+                            <a href="index.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-[#FEF0F0] transition flex items-center gap-2 dropdown-item">Home
+                                1</a>
+                             <a href="home2.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-[#FEF0F0] transition flex items-center gap-2 border-t border-[#FCE6E6] dropdown-item">Home
+                                2</a>
                         </div>
                     </div>
-                    <a href="about.html" class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">About</a>
-                    <a href="service.html" class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Service</a>
-                    <a href="faq.html" class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">FAQ</a>
-                    <a href="booking.html" class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Booking</a>
-                    <a href="blog.html" class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Blog</a>
-                    <a href="Maintenance.html" class="text-[#B83B3B] font-semibold text-sm lg:text-base transition nav-text relative after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#B83B3B]">
-    Maintenance
+                    <a href="about.html"
+                        class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">About</a>
+                    <a href="service.html"
+                        class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Service</a>
+                  <a href="pricing.html"
+    class="text-[#B83B3B] font-semibold text-sm lg:text-base transition nav-text relative after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#B83B3B]">
+    Pricing
 </a>
-                    <a href="contact.html" class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Contact</a>
-                </div>
+                    <a href="booking.html"
+                        class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Booking</a>
+                  <a href="faq.html"
+    class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">
+    FAQ
+</a>
+                    <a href="blog.html"
+                        class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Blog</a>
 
-                <!-- Desktop controls -->
+                    <a href="contact.html"
+                        class="text-[#4A2E2E] font-medium text-sm lg:text-base hover:text-[#B83B3B] transition nav-text">Contact</a>
+                </div>
                 <div class="controls-area hidden xl:flex items-center gap-3 xl:gap-4">
-                    <a href="login.html" class="flex items-center gap-2 bg-[#B83B3B] text-white px-4 py-2 rounded-full text-sm font-medium shadow-md hover:bg-[#9B2E2E] transition btn-primary-dark"><span>Login</span></a>
+                    <a href="login.html"
+                        class="flex items-center gap-2 bg-[#B83B3B] text-white px-4 py-2 rounded-full text-sm font-medium shadow-md hover:bg-[#9B2E2E] transition btn-primary-dark"><span>Login</span></a>
                     <div class="h-5 w-px bg-[#D9A0A0] divider-color"></div>
-                    <button id="darkModeToggle" class="flex items-center gap-1.5 text-[#4A2E2E] font-medium text-sm hover:text-[#B83B3B] transition nav-text"><i id="darkIcon" class="fas fa-moon text-sm"></i> <span id="darkLabel">Dark</span></button>
+                    <button id="darkModeToggle"
+                        class="flex items-center gap-1.5 text-[#4A2E2E] font-medium text-sm hover:text-[#B83B3B] transition nav-text"><i
+                            id="darkIcon" class="fas fa-moon text-sm"></i> <span id="darkLabel">Dark</span></button>
                     <div class="h-5 w-px bg-[#D9A0A0] divider-color"></div>
-                    <button id="rtlToggle" class="flex items-center gap-1.5 text-[#4A2E2E] font-medium text-sm hover:text-[#B83B3B] transition nav-text"><span id="rtlLabel">LTR</span></button>
+                    <button id="rtlToggle"
+                        class="flex items-center gap-1.5 text-[#4A2E2E] font-medium text-sm hover:text-[#B83B3B] transition nav-text"><span
+                            id="rtlLabel">LTR</span></button>
                 </div>
-
-                <!-- Mobile hamburger button -->
                 <div class="flex items-center gap-3 xl:hidden">
-                    <button id="mobileMenuBtn" class="nav-text focus:outline-none p-2 rounded-full hover:bg-[#FFC8C8] transition"><i class="fas fa-bars text-2xl"></i></button>
+                    <button id="mobileMenuBtn"
+                        class="nav-text focus:outline-none p-2 rounded-full hover:bg-[#FFC8C8] transition"><i
+                            class="fas fa-bars text-2xl"></i></button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Drawer Overlay -->
     <div id="drawerOverlay" class="drawer-overlay"></div>
-
-    <!-- Mobile Drawer -->
     <div id="mobileDrawer" class="mobile-drawer bg-[#FFE8E0] border-l border-[#F4CFCF] shadow-xl mobile-menu-dark">
         <div class="flex flex-col h-full">
             <div class="flex justify-between items-center p-5 border-b border-[#F4CFCF]">
-                <div class="flex items-center gap-2"><i class="fas fa-oil-can text-[#B83B3B] text-xl"></i><span class="font-bold text-[#4A2E2E] text-lg nav-text">Menu</span></div>
-                <button id="closeDrawerBtn" class="text-[#4A2E2E] hover:text-[#B83B3B] transition text-2xl"><i class="fas fa-times"></i></button>
+                <div class="flex items-center gap-2"><i class="fas fa-oil-can text-[#B83B3B] text-xl"></i><span
+                        class="font-bold text-[#4A2E2E] text-lg nav-text">Menu</span></div>
+                <button id="closeDrawerBtn" class="text-[#4A2E2E] hover:text-[#B83B3B] transition text-2xl"><i
+                        class="fas fa-times"></i></button>
             </div>
             <div class="flex-1 py-6 px-5 space-y-4 overflow-y-auto">
                 <div>
-                    <div class="flex justify-between items-center py-2 text-[#4A2E2E] font-medium border-b border-[#F4CFCF] nav-text mobile-menu-item">
+                    <div
+                        class="flex justify-between items-center py-2 text-[#4A2E2E] font-medium border-b border-[#F4CFCF] nav-text mobile-menu-item">
                         <span>Home</span>
-                        <button id="drawerHomeBtn"><i id="drawerChevron" class="fas fa-chevron-down text-xs transition-transform"></i></button>
+                        <button id="drawerHomeBtn"><i id="drawerChevron"
+                                class="fas fa-chevron-down text-xs transition-transform"></i></button>
                     </div>
                     <div id="drawerSubmenu" class="hidden pl-4 mt-2 space-y-2">
-                        <a href="index.html" class="block py-1.5 text-sm hover:text-[#B83B3B] transition flex items-center gap-2 nav-text">Home 1</a>
-                        <a href="home2.html" class="block py-1.5 text-sm hover:text-[#B83B3B] transition flex items-center gap-2 nav-text">Home 2</a>
+                        <a href="index.html"
+                            class="block py-1.5 text-sm hover:text-[#B83B3B] transition flex items-center gap-2 nav-text">Home
+                            1</a>
+                        <a href="home2.html"
+                            class="block py-1.5 text-sm hover:text-[#B83B3B] transition flex items-center gap-2 nav-text">Home
+                            2</a>
                     </div>
                 </div>
                 <a href="about.html" class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">About</a>
-                <a href="service.html" class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Service</a>
-                <a href="faq.html" class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">FAQ</a>
-                <a href="booking.html" class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Booking</a>
-                <a href="blog.html" class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Blog</a>
-                <a href="Maintenance.html" class="block py-2 border-b border-[#F4CFCF] text-[#B83B3B] font-semibold bg-[#FFD9D9] dark:bg-[#2a1a1a] px-3 rounded-lg nav-text mobile-menu-item">
-    Maintenance
+                <a href="service.html"
+                    class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Service</a>
+               <a href="pricing.html"
+    class="block py-2 border-b border-[#F4CFCF] text-[#B83B3B] font-semibold mobile-menu-item">
+    Pricing
 </a>
-                <a href="contact.html" class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Contact</a>
+                <a href="booking.html"
+                    class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Booking</a>
+               <a href="faq.html"
+    class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">
+    FAQ
+</a>
+                <a href="blog.html" class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Blog</a>
+
+                <a href="contact.html"
+                    class="block py-2 border-b border-[#F4CFCF] nav-text mobile-menu-item">Contact</a>
                 <div class="pt-4 space-y-4">
-                    <a href="login.html" class="flex items-center gap-2 nav-text"><i class="far fa-user-circle"></i> Login</a>
+                    <a href="login.html" class="flex items-center gap-2 nav-text"><i class="far fa-user-circle"></i>
+                        Login</a>
                     <div class="flex gap-2 pt-2">
-                        <button id="drawerDarkToggle" class="flex-1 flex items-center justify-center gap-2 bg-[#FFCFCF] px-3 py-2 rounded-full text-sm font-medium transition mobile-toggle-btn"><i id="drawerDarkIcon" class="fas fa-moon text-xs"></i> <span id="drawerDarkLabel">Dark</span></button>
-                        <button id="drawerRtlToggle" class="flex-1 flex items-center justify-center gap-2 bg-[#FFCFCF] px-3 py-2 rounded-full text-sm font-medium transition mobile-toggle-btn"><span id="drawerRtlLabel">LTR</span></button>
+                        <button id="drawerDarkToggle"
+                            class="flex-1 flex items-center justify-center gap-2 bg-[#FFCFCF] px-3 py-2 rounded-full text-sm font-medium transition mobile-toggle-btn"><i
+                                id="drawerDarkIcon" class="fas fa-moon text-xs"></i> <span
+                                id="drawerDarkLabel">Dark</span></button>
+                        <button id="drawerRtlToggle"
+                            class="flex-1 flex items-center justify-center gap-2 bg-[#FFCFCF] px-3 py-2 rounded-full text-sm font-medium transition mobile-toggle-btn"><span
+                                id="drawerRtlLabel">LTR</span></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+  
   
     <!-- ========================================== -->
     <!-- VEHICLE OIL EXCHANGE PAGE CONTENT -->
@@ -352,9 +426,9 @@
                         <a href="#booking" class="bg-[#B83B3B] hover:bg-[#9B2E2E] text-white px-8 py-3.5 rounded-full font-semibold shadow-lg transition-all transform hover:-translate-y-1 btn-primary-dark">
                             Book Oil Exchange <i class="fas fa-arrow-right ml-2 rtl-flip"></i>
                         </a>
-                        <a href="#process" class="bg-white/80 border border-[#F0CFCF] text-[#4A2E2E] px-8 py-3.5 rounded-full font-semibold hover:bg-white transition-all card-dark">
-                            View Our Process
-                        </a>
+                      <a href="#process" class="view-process-btn bg-white/80 border border-[#F0CFCF] text-[#4A2E2E] px-8 py-3.5 rounded-full font-semibold hover:bg-white transition-all">
+    View Our Process
+</a>
                     </div>
                 </div>
                 <!-- Hero Image Fixing -->
@@ -379,114 +453,10 @@
     </section>
 
     <!-- Section 2: Why Change Your Oil (Benefits Grid) -->
-    <section class="py-16 md:py-24 bg-white dark:bg-[#121212] border-y border-[#F0CFCF]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#4A2E2E] mb-4">Why Timely Oil Changes Matter</h2>
-                <p class="text-[#6F4B3B] text-lg">Oil is the lifeblood of your vehicle. Neglecting it leads to friction, overheating, and costly repairs down the road.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Benefit 1 -->
-                <div class="p-6 rounded-2xl bg-[#FEF8F0] dark:bg-[#1a1a1a] border border-[#F0CFCF] hover:-translate-y-2 transition-transform duration-300 card-dark text-center group">
-                    <div class="w-16 h-16 mx-auto bg-white dark:bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#B83B3B] text-2xl mb-4 shadow-sm group-hover:bg-[#B83B3B] group-hover:text-white transition-colors">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Engine Protection</h3>
-                    <p class="text-[#6F4B3B] text-sm">Fresh oil prevents friction and wear on moving metal parts inside your engine.</p>
-                </div>
-                <!-- Benefit 2 -->
-                <div class="p-6 rounded-2xl bg-[#FEF8F0] dark:bg-[#1a1a1a] border border-[#F0CFCF] hover:-translate-y-2 transition-transform duration-300 card-dark text-center group">
-                    <div class="w-16 h-16 mx-auto bg-white dark:bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#B83B3B] text-2xl mb-4 shadow-sm group-hover:bg-[#B83B3B] group-hover:text-white transition-colors">
-                        <i class="fas fa-temperature-low"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Heat Regulation</h3>
-                    <p class="text-[#6F4B3B] text-sm">Clean oil absorbs heat, preventing the engine from overheating during operation.</p>
-                </div>
-                <!-- Benefit 3 -->
-                <div class="p-6 rounded-2xl bg-[#FEF8F0] dark:bg-[#1a1a1a] border border-[#F0CFCF] hover:-translate-y-2 transition-transform duration-300 card-dark text-center group">
-                    <div class="w-16 h-16 mx-auto bg-white dark:bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#B83B3B] text-2xl mb-4 shadow-sm group-hover:bg-[#B83B3B] group-hover:text-white transition-colors">
-                        <i class="fas fa-gas-pump"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Better Mileage</h3>
-                    <p class="text-[#6F4B3B] text-sm">Proper lubrication reduces engine workload, resulting in improved fuel efficiency.</p>
-                </div>
-                <!-- Benefit 4 -->
-                <div class="p-6 rounded-2xl bg-[#FEF8F0] dark:bg-[#1a1a1a] border border-[#F0CFCF] hover:-translate-y-2 transition-transform duration-300 card-dark text-center group">
-                    <div class="w-16 h-16 mx-auto bg-white dark:bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#B83B3B] text-2xl mb-4 shadow-sm group-hover:bg-[#B83B3B] group-hover:text-white transition-colors">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Lower Emissions</h3>
-                    <p class="text-[#6F4B3B] text-sm">Fresh oil helps your engine run cleaner, reducing harmful exhaust emissions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+     
 
     <!-- Section 3: Our Oil Exchange Process (Split Layout with Image) - FIXED -->
-    <section id="process" class="py-16 md:py-24 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <!-- Process Image Fixing -->
-                <div class="relative order-2 lg:order-1 h-[400px] sm:h-[500px] lg:min-h-[600px]">
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl h-full card-dark border border-[#F0CFCF]">
-                        <img src="images/mobile (6).jpg" alt="Professional mechanic checking dipstick" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 image-overlay-gradient flex items-end p-6 md:p-8">
-                            <h3 class="text-white text-xl md:text-2xl font-bold">Precision in Every Drop</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Process Steps Layout Fix -->
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#4A2E2E] mb-8 lg:mb-10">The Mobilube Process</h2>
-                    
-                    <!-- Added left margin to protect off-screen bleeding on small devices & shifted padding to the children -->
-                    <div class="space-y-8 border-l-2 rtl:border-l-0 rtl:border-r-2 border-[#F0CFCF] process-step-border ml-5 md:ml-6 rtl:ml-0 rtl:mr-5 rtl:md:mr-6">
-                        
-                        <!-- Step 1 -->
-                        <div class="relative pl-8 md:pl-10 rtl:pl-0 rtl:pr-8 rtl:md:pr-10">
-                            <!-- Left shifted by precisely 1.25rem (half of w-10 circle) for perfect border centering -->
-                            <div class="absolute -left-5 rtl:left-auto rtl:-right-5 top-0 w-10 h-10 bg-[#B83B3B] rounded-full flex items-center justify-center text-white font-bold border-4 border-[#FEF8F0] dark:border-[#0a0a0a] z-10 shadow-md">
-                                1
-                            </div>
-                            <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Thorough Inspection</h3>
-                            <p class="text-[#6F4B3B]">We check fluid levels, engine belts, and the general condition of your engine before starting the drainage.</p>
-                        </div>
-                        
-                        <!-- Step 2 -->
-                        <div class="relative pl-8 md:pl-10 rtl:pl-0 rtl:pr-8 rtl:md:pr-10">
-                            <div class="absolute -left-5 rtl:left-auto rtl:-right-5 top-0 w-10 h-10 bg-white dark:bg-[#1a1a1a] rounded-full flex items-center justify-center text-[#B83B3B] font-bold border-4 border-[#FEF8F0] dark:border-[#0a0a0a] shadow-md card-dark">
-                                2
-                            </div>
-                            <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Drain & Filter Swap</h3>
-                            <p class="text-[#6F4B3B]">Old oil is cleanly drained and recycled. We replace your old oil filter with a premium OEM-certified filter.</p>
-                        </div>
-                        
-                        <!-- Step 3 -->
-                        <div class="relative pl-8 md:pl-10 rtl:pl-0 rtl:pr-8 rtl:md:pr-10">
-                            <div class="absolute -left-5 rtl:left-auto rtl:-right-5 top-0 w-10 h-10 bg-white dark:bg-[#1a1a1a] rounded-full flex items-center justify-center text-[#B83B3B] font-bold border-4 border-[#FEF8F0] dark:border-[#0a0a0a] shadow-md card-dark">
-                                3
-                            </div>
-                            <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Precision Refill</h3>
-                            <p class="text-[#6F4B3B]">Your engine is refilled to exact specifications with the highest quality conventional or synthetic oil of your choice.</p>
-                        </div>
-                        
-                        <!-- Step 4 -->
-                        <div class="relative pl-8 md:pl-10 rtl:pl-0 rtl:pr-8 rtl:md:pr-10">
-                            <div class="absolute -left-5 rtl:left-auto rtl:-right-5 top-0 w-10 h-10 bg-white dark:bg-[#1a1a1a] rounded-full flex items-center justify-center text-[#B83B3B] font-bold border-4 border-[#FEF8F0] dark:border-[#0a0a0a] shadow-md card-dark">
-                                4
-                            </div>
-                            <h3 class="text-xl font-bold text-[#4A2E2E] mb-2">Final Quality Check</h3>
-                            <p class="text-[#6F4B3B]">We start the engine, check for tight seals, ensure zero leaks, and reset your dashboard maintenance light.</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Choose Your Oil Type (Pricing / Packages with Images) -->
+      <!-- Section 4: Choose Your Oil Type (Pricing / Packages with Images) -->
     <section class="py-16 md:py-24 bg-[#FFECE5] dark:bg-[#111111] border-y border-[#F0CFCF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -499,8 +469,9 @@
                 <div class="bg-white dark:bg-[#1a1a1a] rounded-2xl overflow-hidden border border-[#F0CFCF] shadow-lg flex flex-col card-dark hover:shadow-xl transition-shadow">
                     <div class="h-48 overflow-hidden relative">
                         <img src="images/mobile (9).jpg" alt="Conventional Oil" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 px-3 py-1 rounded-full text-xs font-bold text-[#4A2E2E] shadow">Standard</div>
-                    </div>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 px-3 py-1 rounded-full text-xs font-bold text-[#4A2E2E] dark:text-[#FEF8F0] shadow">
+    Standard
+</div>                    </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <h3 class="text-2xl font-bold text-[#4A2E2E] mb-2">Conventional</h3>
                         <p class="text-3xl font-extrabold text-[#B83B3B] mb-4">$39<span class="text-sm font-normal text-[#6F4B3B]">.99</span></p>
@@ -537,8 +508,9 @@
                 <div class="bg-white dark:bg-[#1a1a1a] rounded-2xl overflow-hidden border border-[#F0CFCF] shadow-lg flex flex-col card-dark hover:shadow-xl transition-shadow">
                     <div class="h-48 overflow-hidden relative">
                         <img src="images/mobile (11).jpg" alt="Full Synthetic Oil" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 px-3 py-1 rounded-full text-xs font-bold text-[#4A2E2E] shadow">Premium</div>
-                    </div>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 px-3 py-1 rounded-full text-xs font-bold text-[#4A2E2E] dark:text-[#FEF8F0] shadow">
+    Premium
+</div>                    </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <h3 class="text-2xl font-bold text-[#4A2E2E] mb-2">Full Synthetic</h3>
                         <p class="text-3xl font-extrabold text-[#B83B3B] mb-4">$89<span class="text-sm font-normal text-[#6F4B3B]">.99</span></p>
@@ -585,11 +557,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <!-- Brand Column -->
                 <div class="text-center sm:text-left">
-                    <a href="index.html" class="logo-area flex-shrink-0 flex items-center gap-2 group">
-                    <div class="flex flex-col leading-tight">
-                        <span class="text-[#B83B3B] text-xl md:text-2xl font-bold tracking-tight nav-text">Mobilube</span>
-                    </div>
-                </a>
+                   <a href="index.html" class="logo-area flex-shrink-0 flex items-center gap-2 group">
+    <div class="flex flex-col leading-tight">
+        <span class="text-[#B83B3B] dark:text-[#B83B3B] text-xl md:text-2xl font-bold tracking-tight">
+            Mobilube
+        </span>
+    </div>
+</a>
                     <p class="text-[#6F4B3B] text-sm leading-relaxed text-secondary-dark">Precision lubrication & auto care. Engineered for performance, designed for reliability.</p>
                     <div class="flex justify-center sm:justify-start gap-4 mt-4">
                         <a href="#" class="text-[#A86B5C] hover:text-[#B83B3B] transition text-xl social-icon"><i class="fab fa-instagram"></i></a>
